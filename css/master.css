@@ -313,7 +313,8 @@ FOOTER AREA CSS
   margin-right: -100px;
 }
 .mobile-nav-icon.dots-menu {
-  color: #fff;
+  /* color: #fff; */
+  color: #6c757d;
 }
 .mobilemenubtn {
   border: 1px solid #FFF;
@@ -3287,7 +3288,8 @@ img.elementor-4 {
   right: -30px;
 }
 span.financila {
-  color: rgb(252,118,50) background-image:-moz-linear-gradient( 1deg,rgb(252,118,50) 0%,rgb(247,39,80) 100%);
+  color: rgb(252,118,50);
+  background-image:-moz-linear-gradient( 1deg,rgb(252,118,50) 0%,rgb(247,39,80) 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -4351,7 +4353,8 @@ img.elementor7 {
   position: relative;
 }
 span.tax-palnning {
-  color: rgb(252,118,50) background-image:-moz-linear-gradient( 1deg,rgb(252,118,50) 0%,rgb(247,39,80) 100%);
+  color: rgb(252,118,50);
+  background-image:-moz-linear-gradient( 1deg,rgb(252,118,50) 0%,rgb(247,39,80) 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -6072,21 +6075,24 @@ span.international1 {
 }
 
   span.tax-palnning {
-  color: rgb(252,118,50) background-image:-moz-linear-gradient( 1deg,rgb(252,118,50) 0%,rgb(247,39,80) 100%);
+  color: rgb(252,118,50);
+  background-image:-moz-linear-gradient( 1deg,rgb(252,118,50) 0%,rgb(247,39,80) 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-image: linear-gradient(90deg, #1252DE 0%, rgba(109, 15, 221, 0.77) 100%);
 }
   span.tax-palnning {
-  color: rgb(252,118,50) background-image:-moz-linear-gradient( 1deg,rgb(252,118,50) 0%,rgb(247,39,80) 100%);
+  color: rgb(252,118,50);
+  background-image:-moz-linear-gradient( 1deg,rgb(252,118,50) 0%,rgb(247,39,80) 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-image: linear-gradient(90deg, #1252DE 0%, rgba(109, 15, 221, 0.77) 100%);
 }
 span.service-benefits {
-  color: rgb(252,118,50) background-image:-moz-linear-gradient( 1deg,rgb(252,118,50) 0%,rgb(247,39,80) 100%);
+  color: rgb(252,118,50);
+  background-image:-moz-linear-gradient( 1deg,rgb(252,118,50) 0%,rgb(247,39,80) 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -6094,7 +6100,8 @@ span.service-benefits {
 }
 
 span.tax-consulting {
-  color: rgb(252,118,50) background-image:-moz-linear-gradient( 1deg,rgb(252,118,50) 0%,rgb(247,39,80) 100%);
+  color: rgb(252,118,50);
+  background-image:-moz-linear-gradient( 1deg,rgb(252,118,50) 0%,rgb(247,39,80) 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -6102,7 +6109,8 @@ span.tax-consulting {
 }
 
 span.tax-consultant {
-  color: rgb(252,118,50) background-image:-moz-linear-gradient( 1deg,rgb(252,118,50) 0%,rgb(247,39,80) 100%);
+  color: rgb(252,118,50);
+  background-image:-moz-linear-gradient( 1deg,rgb(252,118,50) 0%,rgb(247,39,80) 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -6110,7 +6118,8 @@ span.tax-consultant {
 }
 
 span.tax-returns {
-  color: rgb(252,118,50) background-image:-moz-linear-gradient( 1deg,rgb(252,118,50) 0%,rgb(247,39,80) 100%);
+  color: rgb(252,118,50);
+  background-image:-moz-linear-gradient( 1deg,rgb(252,118,50) 0%,rgb(247,39,80) 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -6118,7 +6127,8 @@ span.tax-returns {
 }
 
 span.consult-reason {
-  color: rgb(252,118,50) background-image:-moz-linear-gradient( 1deg,rgb(252,118,50) 0%,rgb(247,39,80) 100%);
+  color: rgb(252,118,50);
+  background-image:-moz-linear-gradient( 1deg,rgb(252,118,50) 0%,rgb(247,39,80) 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
