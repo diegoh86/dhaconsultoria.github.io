@@ -17,6 +17,11 @@ export default defineConfig({
             res.end();
             return;
           }
+          if (url.includes('petlucky')) {
+            res.writeHead(302, { Location: 'https://diegoh86.github.io/petlucky/' });
+            res.end();
+            return;
+          }
           next();
         });
       }
