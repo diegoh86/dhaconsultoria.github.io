@@ -22,6 +22,16 @@ export default defineConfig({
             res.end();
             return;
           }
+          if (url.includes('petshop-e-o-bicho')) {
+            res.writeHead(302, { Location: 'https://diegoh86.github.io/petshop-e-o-bicho/' });
+            res.end();
+            return;
+          }
+          if (url.includes('clinica-novo-sorriso') || url.includes('novo-sorriso')) {
+            res.writeHead(302, { Location: 'https://diegoh86.github.io/novo-sorriso/' });
+            res.end();
+            return;
+          }
           next();
         });
       }
