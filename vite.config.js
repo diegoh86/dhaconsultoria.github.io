@@ -32,9 +32,27 @@ export default defineConfig({
             res.end();
             return;
           }
+          if (url.includes('dianna-bakery')) {
+            res.writeHead(302, { Location: 'https://diegoh86.github.io/dianna-bakery/' });
+            res.end();
+            return;
+          }
+          if (url.includes('nama-log')) {
+            res.writeHead(302, { Location: 'https://diegoh86.github.io/nama-log/' });
+            res.end();
+            return;
+          }
           next();
         });
       }
     }
-  ]
+  ],
+  build: {
+    rollupOptions: {
+      input: {
+        main: './index.html',
+        hotsites: './hotsites/index.html'
+      }
+    }
+  }
 });

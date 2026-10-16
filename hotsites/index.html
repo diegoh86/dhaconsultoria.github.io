@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Hotsites | DHA Consultor.ia em Inteligência Artificial</title>
+    
+    <!-- Canonical Link -->
+    <link rel="canonical" href="https://dhaconsultoria.com.br/hotsites/">
+    
+    <!-- Favicons -->
+    <link rel="icon" href="../images/favicon.png" type="image/png">
+    <link rel="apple-touch-icon" href="../images/favicon.png">
+
+    <!--=====CSS LINK=======-->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/font-awesome-pro.css">
+    <link rel="stylesheet" href="../css/all.min.css">
+    <link rel="stylesheet" href="../css/typography.css">
+    <link rel="stylesheet" href="../css/master.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/mobile.css">
+    
+    <script src="../js/jquery-3-6-0.min.js"></script>
+
+    <style>
+        :root {
+            --dha-navy: #141B2C;
+            --dha-blue: #1A237E;
+            --dha-accent: #22BFCA;
+            --dha-orange: #EB7C3A;
+            --dha-light-bg: #F4F7FC;
+        }
+
+        body {
+            background-color: var(--dha-light-bg);
+            color: #334155;
+            font-family: 'Outfit', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .hotsite-page-header {
+            background: linear-gradient(135deg, #0B111F 0%, #141B2C 60%, #1A237E 100%);
+            padding: 70px 0 60px 0;
+            position: relative;
+            color: #FFFFFF;
+            overflow: hidden;
+        }
+
+        .hotsite-page-header::after {
+            content: "";
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(34, 191, 202, 0.15) 0%, rgba(26, 35, 126, 0) 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .badge-portal {
+            display: inline-block;
+            background: rgba(34, 191, 202, 0.18);
+            color: #4FE1EC;
+            border: 1px solid rgba(34, 191, 202, 0.35);
+            padding: 6px 16px;
+            border-radius: 30px;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+        }
+
+        .search-filter-box {
+            background: #FFFFFF;
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: 0 10px 30px rgba(20, 27, 44, 0.06);
+            margin-top: -35px;
+            position: relative;
+            z-index: 10;
+            border: 1px solid #E2E8F0;
+        }
+
+        .search-input-wrapper {
+            position: relative;
+        }
+
+        .search-input-wrapper i {
+            position: absolute;
+            left: 18px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #94A3B8;
+            font-size: 18px;
+        }
+
+        .search-input-wrapper input {
+            width: 100%;
+            padding: 14px 18px 14px 48px;
+            border-radius: 10px;
+            border: 1.5px solid #E2E8F0;
+            font-size: 15px;
+            outline: none;
+            transition: all 0.25s ease;
+            background-color: #F8FAFC;
+        }
+
+        .search-input-wrapper input:focus {
+            border-color: var(--dha-blue);
+            background-color: #FFFFFF;
+            box-shadow: 0 0 0 3px rgba(26, 35, 126, 0.1);
+        }
+
+        .filter-btn-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 16px;
+        }
+
+        .filter-btn {
+            background: #F1F5F9;
+            color: #475569;
+            border: 1px solid #E2E8F0;
+            padding: 7px 16px;
+            border-radius: 20px;
+            font-size: 13.5px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .filter-btn:hover, .filter-btn.active {
+            background: var(--dha-blue);
+            color: #FFFFFF;
+            border-color: var(--dha-blue);
+        }
+
+        /* Cards de Hotsites */
+        .hotsite-card {
+            background: #FFFFFF;
+            border-radius: 16px;
+            border: 1px solid #E2E8F0;
+            padding: 28px 24px;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            box-shadow: 0 4px 15px rgba(20, 27, 44, 0.04);
+        }
+
+        .hotsite-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 16px 32px rgba(20, 27, 44, 0.12);
+            border-color: #CBD5E1;
+        }
+
+        .card-top {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            margin-bottom: 16px;
+        }
+
+        .icon-box {
+            width: 52px;
+            height: 52px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            color: #FFFFFF;
+            flex-shrink: 0;
+        }
+
+        .icon-box.odontologia {
+            background: linear-gradient(135deg, #0EA5E9, #0284C7);
+        }
+
+        .icon-box.pet {
+            background: linear-gradient(135deg, #10B981, #059669);
+        }
+
+        .icon-box.gastronomia {
+            background: linear-gradient(135deg, #F59E0B, #D97706);
+        }
+
+        .icon-box.logistica {
+            background: linear-gradient(135deg, #F97316, #EA580C);
+        }
+
+        .segment-tag {
+            font-size: 12px;
+            font-weight: 600;
+            padding: 5px 12px;
+            border-radius: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            display: inline-block;
+        }
+
+        .segment-tag.odontologia {
+            background: #E0F2FE;
+            color: #0369A1;
+        }
+
+        .segment-tag.pet {
+            background: #DCFCE7;
+            color: #15803D;
+        }
+
+        .segment-tag.gastronomia {
+            background: #FEF3C7;
+            color: #B45309;
+        }
+
+        .segment-tag.logistica {
+            background: #FFEDD5;
+            color: #C2410C;
+        }
+
+        .hotsite-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--dha-navy);
+            margin-bottom: 8px;
+            line-height: 1.35;
+        }
+
+        .hotsite-desc {
+            font-size: 14.5px;
+            line-height: 1.6;
+            color: #64748B;
+            margin-bottom: 18px;
+            flex-grow: 1;
+        }
+
+        .url-preview {
+            background: #F8FAFC;
+            border: 1px dashed #CBD5E1;
+            border-radius: 8px;
+            padding: 8px 12px;
+            font-size: 12.5px;
+            color: #475569;
+            font-family: monospace;
+            display: flex;
+            align-items: center;
+            margin-bottom: 18px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .url-preview i {
+            color: #94A3B8;
+            margin-right: 8px;
+            font-size: 14px;
+        }
+
+        .btn-access-hotsite {
+            background: var(--dha-navy);
+            color: #FFFFFF !important;
+            padding: 11px 20px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: all 0.25s ease;
+            text-decoration: none;
+            width: 100%;
+        }
+
+        .btn-access-hotsite:hover {
+            background: var(--dha-blue);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(26, 35, 126, 0.25);
+        }
+
+        .btn-access-hotsite i {
+            font-size: 13px;
+            transition: transform 0.2s ease;
+        }
+
+        .btn-access-hotsite:hover i {
+            transform: translateX(3px);
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 60px 20px;
+            display: none;
+        }
+
+        .empty-state i {
+            font-size: 48px;
+            color: #94A3B8;
+            margin-bottom: 16px;
+        }
+
+        .main-content-area {
+            flex: 1 0 auto;
+            padding-bottom: 80px;
+        }
+
+        .nav-home-btn {
+            background: rgba(255, 255, 255, 0.12);
+            color: #FFFFFF !important;
+            padding: 8px 18px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 14px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.2s ease;
+        }
+
+        .nav-home-btn:hover {
+            background: #FFFFFF;
+            color: var(--dha-navy) !important;
+        }
+
+        .footer-mini {
+            background: #0B111F;
+            color: #94A3B8;
+            padding: 30px 0;
+            font-size: 14px;
+            border-top: 1px solid #1E293B;
+            margin-top: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <!--=====HEADER =======-->
+    <header class="header about-bg d-none d-lg-block" style="background-color: #070B14; border-bottom: 1px solid rgba(255,255,255,0.08);">
+        <div class="header-area header" id="header">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-12">
+                        <div class="header-elements d-flex justify-content-between align-items-center py-3">
+                            <div class="site-logo">
+                                <a href="../index.html">
+                                    <img src="../images/logo11.png" alt="DHA Consultor.ia" style="max-height: 70px;">
+                                </a>
+                            </div>
+                            <div class="d-flex align-items-center gap-3">
+                                <a href="../index.html" class="nav-home-btn">
+                                    <i class="fa-solid fa-arrow-left"></i> Voltar ao Início
+                                </a>
+                                <a href="https://wa.me/+5521995334122?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20os%20hotsites%20da%20DHA%20Consultor.ia" target="_blank" class="theme-btn5 font-outfit font-14 weight-700 py-2 px-3">
+                                    CONTATO <span><i class="fa-solid fa-arrow-right-long"></i></span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!--===== HEADER END=======-->
+
+    <!--=====Mobile header start=======-->
+    <div class="mobile-header d-block d-lg-none" style="background-color: #070B14; padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,0.08);">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <a href="../index.html">
+                    <img src="../images/logo11.png" alt="DHA Consultor.ia" style="max-height: 48px;">
+                </a>
+                <a href="../index.html" class="nav-home-btn" style="padding: 6px 12px; font-size: 13px;">
+                    <i class="fa-solid fa-arrow-left"></i> Início
+                </a>
+            </div>
+        </div>
+    </div>
+    <!--===== Mobile header end=======-->
+
+    <!--===== MAIN CONTENT AREA =====-->
+    <div class="main-content-area">
+        <!-- Header Banner -->
+        <section class="hotsite-page-header">
+            <div class="container">
+                <div class="row justify-content-center text-center">
+                    <div class="col-lg-9">
+                        <span class="badge-portal"><i class="fa-solid fa-layer-group me-1"></i> Diretório de Hotsites</span>
+                        <h1 class="font-outfit font-48 weight-700 lineh-56 mb-3 text-white">Nossos Hotsites</h1>
+                        <p class="font-outfit font-18 lineh-28 text-white-50 mb-0">
+                            Listagem de todas as páginas e hotsites desenvolvidos e hospedados pela DHA Consultor.ia.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Search & Filter Area -->
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-11">
+                    <div class="search-filter-box">
+                        <div class="row align-items-center">
+                            <div class="col-lg-6 mb-3 mb-lg-0">
+                                <div class="search-input-wrapper">
+                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                    <input type="text" id="searchInput" placeholder="Pesquisar por nome da empresa ou segmento..." autocomplete="off">
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="filter-btn-group justify-content-lg-end" id="filterGroup">
+                                    <button class="filter-btn active" data-filter="all">Todos <span class="opacity-75">(7)</span></button>
+                                    <button class="filter-btn" data-filter="odontologia">Odontologia</button>
+                                    <button class="filter-btn" data-filter="pet">Pet Care</button>
+                                    <button class="filter-btn" data-filter="gastronomia">Gastronomia</button>
+                                    <button class="filter-btn" data-filter="logistica">Logística</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Hotsites Grid -->
+        <section class="mt-5">
+            <div class="container">
+                <div class="row g-4" id="hotsitesGrid">
+
+                    <!-- 1. CEO Odontologia -->
+                    <div class="col-lg-4 col-md-6 hotsite-item" data-category="odontologia" data-search="ceo centro especializado de odontologia dentista tijuca saude bucal implantes aparelho">
+                        <div class="hotsite-card">
+                            <div class="card-top">
+                                <div class="icon-box odontologia">
+                                    <i class="fa-solid fa-tooth"></i>
+                                </div>
+                                <span class="segment-tag odontologia">Odontologia</span>
+                            </div>
+                            <h3 class="hotsite-title">CEO - Centro Especializado de Odontologia</h3>
+                            <p class="hotsite-desc">
+                                Excelência em tratamentos odontológicos na Tijuca. Atendimento humanizado, tecnologia de ponta e reabilitação oral completa.
+                            </p>
+                            <div class="url-preview" title="dhaconsultoria.com.br/hotsites/ceo-odontologia/">
+                                <i class="fa-solid fa-link"></i> /hotsites/ceo-odontologia/
+                            </div>
+                            <a href="./ceo-odontologia/" target="_blank" rel="noopener noreferrer" class="btn-access-hotsite">
+                                Acessar Hotsite <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- 2. Clinica Odontologica Novo Sorriso -->
+                    <div class="col-lg-4 col-md-6 hotsite-item" data-category="odontologia" data-search="clinica odontologica novo sorriso dentista tijuca saude bucal avaliacao 20 anos">
+                        <div class="hotsite-card">
+                            <div class="card-top">
+                                <div class="icon-box odontologia">
+                                    <i class="fa-solid fa-smile"></i>
+                                </div>
+                                <span class="segment-tag odontologia">Odontologia</span>
+                            </div>
+                            <h3 class="hotsite-title">Clínica Novo Sorriso</h3>
+                            <p class="hotsite-desc">
+                                Há mais de 20 anos cuidando do seu sorriso na Tijuca. Tratamentos odontológicos especializados, clareamento e próteses.
+                            </p>
+                            <div class="url-preview" title="dhaconsultoria.com.br/hotsites/clinica-novo-sorriso/">
+                                <i class="fa-solid fa-link"></i> /hotsites/clinica-novo-sorriso/
+                            </div>
+                            <a href="./clinica-novo-sorriso/" target="_blank" rel="noopener noreferrer" class="btn-access-hotsite">
+                                Acessar Hotsite <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- 3. Clinica Odonto Moderna -->
+                    <div class="col-lg-4 col-md-6 hotsite-item" data-category="odontologia" data-search="clinica odonto moderna dentista tijuca conde de bonfim estetica dental">
+                        <div class="hotsite-card">
+                            <div class="card-top">
+                                <div class="icon-box odontologia">
+                                    <i class="fa-solid fa-hospital-user"></i>
+                                </div>
+                                <span class="segment-tag odontologia">Odontologia</span>
+                            </div>
+                            <h3 class="hotsite-title">Clínica Odonto Moderna</h3>
+                            <p class="hotsite-desc">
+                                Tratamentos odontológicos modernos e humanizados no coração da Tijuca (Rua Conde de Bonfim, 528). Odontologia estética e reabilitação.
+                            </p>
+                            <div class="url-preview" title="dhaconsultoria.com.br/hotsites/clinica-odonto-moderna/">
+                                <i class="fa-solid fa-link"></i> /hotsites/clinica-odonto-moderna/
+                            </div>
+                            <a href="./clinica-odonto-moderna/" target="_blank" rel="noopener noreferrer" class="btn-access-hotsite">
+                                Acessar Hotsite <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- 4. Dianna Bakery -->
+                    <div class="col-lg-4 col-md-6 hotsite-item" data-category="gastronomia" data-search="dianna bakery confeitaria padaria artesanal tijuca bolos paes fermentacao natural doces cafe">
+                        <div class="hotsite-card">
+                            <div class="card-top">
+                                <div class="icon-box gastronomia">
+                                    <i class="fa-solid fa-cake-candles"></i>
+                                </div>
+                                <span class="segment-tag gastronomia">Gastronomia</span>
+                            </div>
+                            <h3 class="hotsite-title">Dianna Bakery</h3>
+                            <p class="hotsite-desc">
+                                Confeitaria e padaria artesanal na Tijuca. Sobremesas autorais, pães de fermentação natural e cafés especiais com ingredientes selecionados.
+                            </p>
+                            <div class="url-preview" title="dhaconsultoria.com.br/hotsites/dianna-bakery/">
+                                <i class="fa-solid fa-link"></i> /hotsites/dianna-bakery/
+                            </div>
+                            <a href="./dianna-bakery/" target="_blank" rel="noopener noreferrer" class="btn-access-hotsite">
+                                Acessar Hotsite <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- 5. Nama Log -->
+                    <div class="col-lg-4 col-md-6 hotsite-item" data-category="logistica" data-search="nama log motoboy rj entregas rapidas logistica expressa same day delivery encomendas ecommerce">
+                        <div class="hotsite-card">
+                            <div class="card-top">
+                                <div class="icon-box logistica">
+                                    <i class="fa-solid fa-motorcycle"></i>
+                                </div>
+                                <span class="segment-tag logistica">Logística</span>
+                            </div>
+                            <h3 class="hotsite-title">Nama Log</h3>
+                            <p class="hotsite-desc">
+                                Serviço especializado de motoboy no Rio de Janeiro. Logística expressa, entregas rápidas (Same Day Delivery), transporte de documentos e e-commerce.
+                            </p>
+                            <div class="url-preview" title="dhaconsultoria.com.br/hotsites/nama-log/">
+                                <i class="fa-solid fa-link"></i> /hotsites/nama-log/
+                            </div>
+                            <a href="./nama-log/" target="_blank" rel="noopener noreferrer" class="btn-access-hotsite">
+                                Acessar Hotsite <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- 6. PetLucky -->
+                    <div class="col-lg-4 col-md-6 hotsite-item" data-category="pet" data-search="petlucky pet shop veterinaria banho tosa ozonizado racao vacinas tijuca">
+                        <div class="hotsite-card">
+                            <div class="card-top">
+                                <div class="icon-box pet">
+                                    <i class="fa-solid fa-paw"></i>
+                                </div>
+                                <span class="segment-tag pet">Pet Care</span>
+                            </div>
+                            <h3 class="hotsite-title">PetLucky</h3>
+                            <p class="hotsite-desc">
+                                25 anos de amor e dedicação aos animais. Banho & tosa ozonizado, consultório veterinário, vacinas, rações premium e serviço de delivery.
+                            </p>
+                            <div class="url-preview" title="dhaconsultoria.com.br/hotsites/petlucky/">
+                                <i class="fa-solid fa-link"></i> /hotsites/petlucky/
+                            </div>
+                            <a href="./petlucky/" target="_blank" rel="noopener noreferrer" class="btn-access-hotsite">
+                                Acessar Hotsite <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- 7. Petshop E o Bicho -->
+                    <div class="col-lg-4 col-md-6 hotsite-item" data-category="pet" data-search="petshop e o bicho banho tosa racoes medicamentos tijuca vila isabel animais">
+                        <div class="hotsite-card">
+                            <div class="card-top">
+                                <div class="icon-box pet">
+                                    <i class="fa-solid fa-dog"></i>
+                                </div>
+                                <span class="segment-tag pet">Pet Care</span>
+                            </div>
+                            <h3 class="hotsite-title">Petshop É o Bicho</h3>
+                            <p class="hotsite-desc">
+                                Especialistas em estética animal com banho e tosa de alto padrão, farmácia veterinária, acessórios e rações na Tijuca e em Vila Isabel.
+                            </p>
+                            <div class="url-preview" title="dhaconsultoria.com.br/hotsites/petshop-e-o-bicho/">
+                                <i class="fa-solid fa-link"></i> /hotsites/petshop-e-o-bicho/
+                            </div>
+                            <a href="./petshop-e-o-bicho/" target="_blank" rel="noopener noreferrer" class="btn-access-hotsite">
+                                Acessar Hotsite <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Empty State -->
+                <div class="empty-state" id="emptyState">
+                    <i class="fa-regular fa-folder-open"></i>
+                    <h4 class="font-outfit font-22 weight-600 color-17 mb-2">Nenhum hotsite encontrado</h4>
+                    <p class="text-muted">Tente ajustar o termo de pesquisa ou selecionar outra categoria.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!--===== FOOTER MINI =====-->
+    <footer class="footer-mini">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                    <p class="mb-0">© 2024 DHA Consultor.ia em Inteligência Artificial. Todos os direitos reservados.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <span class="text-white-50">
+                        <i class="fa-solid fa-phone me-1"></i> (21) 99533-4122 &nbsp;|&nbsp; 
+                        <a href="../index.html" class="text-white-50 text-decoration-none hover-white">www.dhaconsultoria.com.br</a>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Filter & Search Script -->
+    <script>
+        (function() {
+            const searchInput = document.getElementById('searchInput');
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const items = document.querySelectorAll('.hotsite-item');
+            const emptyState = document.getElementById('emptyState');
+
+            let currentFilter = 'all';
+
+            function filterItems() {
+                const query = (searchInput.value || '').toLowerCase().trim();
+                let visibleCount = 0;
+
+                items.forEach(item => {
+                    const category = item.getAttribute('data-category');
+                    const searchData = (item.getAttribute('data-search') || '').toLowerCase();
+                    const title = item.querySelector('.hotsite-title').textContent.toLowerCase();
+
+                    const matchesCategory = (currentFilter === 'all') || (category === currentFilter);
+                    const matchesSearch = !query || searchData.includes(query) || title.includes(query);
+
+                    if (matchesCategory && matchesSearch) {
+                        item.style.display = '';
+                        visibleCount++;
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+
+                if (visibleCount === 0) {
+                    emptyState.style.display = 'block';
+                } else {
+                    emptyState.style.display = 'none';
+                }
+            }
+
+            // Filter button clicks
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    currentFilter = this.getAttribute('data-filter');
+                    filterItems();
+                });
+            });
+
+            // Live Search
+            searchInput.addEventListener('input', filterItems);
+        })();
+    </script>
+
+</body>
+</html>
