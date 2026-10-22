@@ -270,21 +270,83 @@
             border: 1px dashed #CBD5E1;
             border-radius: 8px;
             padding: 8px 12px;
-            font-size: 12.5px;
+            font-size: 11.5px;
             color: #475569;
             font-family: monospace;
             display: flex;
             align-items: center;
+            justify-content: space-between;
             margin-bottom: 18px;
+            position: relative;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            user-select: none;
+        }
+
+        .url-preview:hover {
+            background: #F1F5F9;
+            border-color: var(--dha-accent);
+        }
+
+        .url-preview .url-text {
             overflow: hidden;
             text-overflow: ellipsis;
             white-space: nowrap;
+            flex-grow: 1;
+            margin-right: 8px;
+            color: #334155;
+            letter-spacing: -0.2px;
         }
 
-        .url-preview i {
-            color: #94A3B8;
-            margin-right: 8px;
-            font-size: 14px;
+        .url-preview .copy-btn {
+            background: transparent;
+            border: none;
+            padding: 0;
+            color: #64748B;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+            transition: all 0.2s ease;
+            flex-shrink: 0;
+        }
+
+        .url-preview:hover .copy-btn {
+            color: var(--dha-accent);
+        }
+
+        .url-preview.copied {
+            border-color: #10B981;
+            background: #ECFDF5;
+        }
+
+        .url-preview.copied .copy-btn {
+            color: #10B981;
+        }
+
+        .url-preview .copy-tooltip {
+            position: absolute;
+            right: 8px;
+            top: -26px;
+            background: #0F172A;
+            color: #FFFFFF;
+            font-size: 11px;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 500;
+            padding: 2px 8px;
+            border-radius: 4px;
+            opacity: 0;
+            transform: translateY(4px);
+            pointer-events: none;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            z-index: 20;
+        }
+
+        .url-preview.copied .copy-tooltip {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         .btn-access-hotsite {
@@ -473,8 +535,12 @@
                             <p class="hotsite-desc">
                                 Excelência em tratamentos odontológicos na Tijuca. Atendimento humanizado, tecnologia de ponta e reabilitação oral completa.
                             </p>
-                            <div class="url-preview" title="dhaconsultoria.com.br/hotsites/ceo-odontologia/">
-                                <i class="fa-solid fa-link"></i> /hotsites/ceo-odontologia/
+                            <div class="url-preview" title="Clique para copiar o link completo" data-url="https://dhaconsultoria.com.br/hotsites/ceo-odontologia/">
+                                <span class="url-text">https://dhaconsultoria.com.br/hotsites/ceo-odontologia/</span>
+                                <button type="button" class="copy-btn" aria-label="Copiar link" title="Copiar link">
+                                    <i class="fa-solid fa-link"></i>
+                                </button>
+                                <span class="copy-tooltip">Copiado!</span>
                             </div>
                             <a href="./ceo-odontologia/" target="_blank" rel="noopener noreferrer" class="btn-access-hotsite">
                                 Acessar Hotsite <i class="fa-solid fa-arrow-up-right-from-square"></i>
@@ -495,8 +561,12 @@
                             <p class="hotsite-desc">
                                 Há mais de 20 anos cuidando do seu sorriso na Tijuca. Tratamentos odontológicos especializados, clareamento e próteses.
                             </p>
-                            <div class="url-preview" title="dhaconsultoria.com.br/hotsites/clinica-novo-sorriso/">
-                                <i class="fa-solid fa-link"></i> /hotsites/clinica-novo-sorriso/
+                            <div class="url-preview" title="Clique para copiar o link completo" data-url="https://dhaconsultoria.com.br/hotsites/clinica-novo-sorriso/">
+                                <span class="url-text">https://dhaconsultoria.com.br/hotsites/clinica-novo-sorriso/</span>
+                                <button type="button" class="copy-btn" aria-label="Copiar link" title="Copiar link">
+                                    <i class="fa-solid fa-link"></i>
+                                </button>
+                                <span class="copy-tooltip">Copiado!</span>
                             </div>
                             <a href="./clinica-novo-sorriso/" target="_blank" rel="noopener noreferrer" class="btn-access-hotsite">
                                 Acessar Hotsite <i class="fa-solid fa-arrow-up-right-from-square"></i>
@@ -517,8 +587,12 @@
                             <p class="hotsite-desc">
                                 Tratamentos odontológicos modernos e humanizados no coração da Tijuca (Rua Conde de Bonfim, 528). Odontologia estética e reabilitação.
                             </p>
-                            <div class="url-preview" title="dhaconsultoria.com.br/hotsites/clinica-odonto-moderna/">
-                                <i class="fa-solid fa-link"></i> /hotsites/clinica-odonto-moderna/
+                            <div class="url-preview" title="Clique para copiar o link completo" data-url="https://dhaconsultoria.com.br/hotsites/clinica-odonto-moderna/">
+                                <span class="url-text">https://dhaconsultoria.com.br/hotsites/clinica-odonto-moderna/</span>
+                                <button type="button" class="copy-btn" aria-label="Copiar link" title="Copiar link">
+                                    <i class="fa-solid fa-link"></i>
+                                </button>
+                                <span class="copy-tooltip">Copiado!</span>
                             </div>
                             <a href="./clinica-odonto-moderna/" target="_blank" rel="noopener noreferrer" class="btn-access-hotsite">
                                 Acessar Hotsite <i class="fa-solid fa-arrow-up-right-from-square"></i>
@@ -539,8 +613,12 @@
                             <p class="hotsite-desc">
                                 Confeitaria e padaria artesanal na Tijuca. Sobremesas autorais, pães de fermentação natural e cafés especiais com ingredientes selecionados.
                             </p>
-                            <div class="url-preview" title="dhaconsultoria.com.br/hotsites/dianna-bakery/">
-                                <i class="fa-solid fa-link"></i> /hotsites/dianna-bakery/
+                            <div class="url-preview" title="Clique para copiar o link completo" data-url="https://dhaconsultoria.com.br/hotsites/dianna-bakery/">
+                                <span class="url-text">https://dhaconsultoria.com.br/hotsites/dianna-bakery/</span>
+                                <button type="button" class="copy-btn" aria-label="Copiar link" title="Copiar link">
+                                    <i class="fa-solid fa-link"></i>
+                                </button>
+                                <span class="copy-tooltip">Copiado!</span>
                             </div>
                             <a href="./dianna-bakery/" target="_blank" rel="noopener noreferrer" class="btn-access-hotsite">
                                 Acessar Hotsite <i class="fa-solid fa-arrow-up-right-from-square"></i>
@@ -561,8 +639,12 @@
                             <p class="hotsite-desc">
                                 Serviço especializado de motoboy no Rio de Janeiro. Logística expressa, entregas rápidas (Same Day Delivery), transporte de documentos e e-commerce.
                             </p>
-                            <div class="url-preview" title="dhaconsultoria.com.br/hotsites/nama-log/">
-                                <i class="fa-solid fa-link"></i> /hotsites/nama-log/
+                            <div class="url-preview" title="Clique para copiar o link completo" data-url="https://dhaconsultoria.com.br/hotsites/nama-log/">
+                                <span class="url-text">https://dhaconsultoria.com.br/hotsites/nama-log/</span>
+                                <button type="button" class="copy-btn" aria-label="Copiar link" title="Copiar link">
+                                    <i class="fa-solid fa-link"></i>
+                                </button>
+                                <span class="copy-tooltip">Copiado!</span>
                             </div>
                             <a href="./nama-log/" target="_blank" rel="noopener noreferrer" class="btn-access-hotsite">
                                 Acessar Hotsite <i class="fa-solid fa-arrow-up-right-from-square"></i>
@@ -583,8 +665,12 @@
                             <p class="hotsite-desc">
                                 25 anos de amor e dedicação aos animais. Banho & tosa ozonizado, consultório veterinário, vacinas, rações premium e serviço de delivery.
                             </p>
-                            <div class="url-preview" title="dhaconsultoria.com.br/hotsites/petlucky/">
-                                <i class="fa-solid fa-link"></i> /hotsites/petlucky/
+                            <div class="url-preview" title="Clique para copiar o link completo" data-url="https://dhaconsultoria.com.br/hotsites/petlucky/">
+                                <span class="url-text">https://dhaconsultoria.com.br/hotsites/petlucky/</span>
+                                <button type="button" class="copy-btn" aria-label="Copiar link" title="Copiar link">
+                                    <i class="fa-solid fa-link"></i>
+                                </button>
+                                <span class="copy-tooltip">Copiado!</span>
                             </div>
                             <a href="./petlucky/" target="_blank" rel="noopener noreferrer" class="btn-access-hotsite">
                                 Acessar Hotsite <i class="fa-solid fa-arrow-up-right-from-square"></i>
@@ -605,8 +691,12 @@
                             <p class="hotsite-desc">
                                 Especialistas em estética animal com banho e tosa de alto padrão, farmácia veterinária, acessórios e rações na Tijuca e em Vila Isabel.
                             </p>
-                            <div class="url-preview" title="dhaconsultoria.com.br/hotsites/petshop-e-o-bicho/">
-                                <i class="fa-solid fa-link"></i> /hotsites/petshop-e-o-bicho/
+                            <div class="url-preview" title="Clique para copiar o link completo" data-url="https://dhaconsultoria.com.br/hotsites/petshop-e-o-bicho/">
+                                <span class="url-text">https://dhaconsultoria.com.br/hotsites/petshop-e-o-bicho/</span>
+                                <button type="button" class="copy-btn" aria-label="Copiar link" title="Copiar link">
+                                    <i class="fa-solid fa-link"></i>
+                                </button>
+                                <span class="copy-tooltip">Copiado!</span>
                             </div>
                             <a href="./petshop-e-o-bicho/" target="_blank" rel="noopener noreferrer" class="btn-access-hotsite">
                                 Acessar Hotsite <i class="fa-solid fa-arrow-up-right-from-square"></i>
@@ -627,8 +717,12 @@
                             <p class="hotsite-desc">
                                 A barbearia com a experiência mais completa do Rio Comprido. Cortes modernos, barboterapia tradicional, chopp gelado, clube de assinatura e curso profissional.
                             </p>
-                            <div class="url-preview" title="dhaconsultoria.com.br/hotsites/barbearia-mix/">
-                                <i class="fa-solid fa-link"></i> /hotsites/barbearia-mix/
+                            <div class="url-preview" title="Clique para copiar o link completo" data-url="https://dhaconsultoria.com.br/hotsites/barbearia-mix/">
+                                <span class="url-text">https://dhaconsultoria.com.br/hotsites/barbearia-mix/</span>
+                                <button type="button" class="copy-btn" aria-label="Copiar link" title="Copiar link">
+                                    <i class="fa-solid fa-link"></i>
+                                </button>
+                                <span class="copy-tooltip">Copiado!</span>
                             </div>
                             <a href="./barbearia-mix/" target="_blank" rel="noopener noreferrer" class="btn-access-hotsite">
                                 Acessar Hotsite <i class="fa-solid fa-arrow-up-right-from-square"></i>
@@ -714,6 +808,55 @@
 
             // Live Search
             searchInput.addEventListener('input', filterItems);
+
+            // Copy URL to Clipboard
+            function copyToClipboard(text, onSuccess) {
+                if (navigator.clipboard && window.isSecureContext) {
+                    navigator.clipboard.writeText(text).then(onSuccess).catch(() => {
+                        fallbackCopy(text, onSuccess);
+                    });
+                } else {
+                    fallbackCopy(text, onSuccess);
+                }
+            }
+
+            function fallbackCopy(text, onSuccess) {
+                const textArea = document.createElement('textarea');
+                textArea.value = text;
+                textArea.style.position = 'fixed';
+                textArea.style.left = '-9999px';
+                document.body.appendChild(textArea);
+                textArea.focus();
+                textArea.select();
+                try {
+                    document.execCommand('copy');
+                    onSuccess();
+                } catch (err) {
+                    console.error('Falha ao copiar:', err);
+                }
+                document.body.removeChild(textArea);
+            }
+
+            document.querySelectorAll('.url-preview').forEach(box => {
+                box.addEventListener('click', function(e) {
+                    const url = this.getAttribute('data-url') || (this.querySelector('.url-text') ? this.querySelector('.url-text').textContent.trim() : '');
+                    if (!url) return;
+
+                    const icon = this.querySelector('.copy-btn i');
+                    copyToClipboard(url, () => {
+                        box.classList.add('copied');
+                        if (icon) {
+                            icon.className = 'fa-solid fa-check';
+                        }
+                        setTimeout(() => {
+                            box.classList.remove('copied');
+                            if (icon) {
+                                icon.className = 'fa-solid fa-link';
+                            }
+                        }, 2000);
+                    });
+                });
+            });
         })();
     </script>
 
