@@ -42,6 +42,11 @@ export default defineConfig({
             res.end();
             return;
           }
+          if (url.includes('log-mova')) {
+            res.writeHead(302, { Location: 'https://diegoh86.github.io/log-mova/' });
+            res.end();
+            return;
+          }
           next();
         });
       }
